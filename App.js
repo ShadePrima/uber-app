@@ -7,9 +7,9 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 import HomeScreen from "./screens/HomeScreen";
 import MapScreen from "./screens/MapScreen";
+import EatsScreen from "./screens/EatsScreen";
 
 import { store } from "./store";
-import EatsScreen from "./screens/EatsScreen";
 const Stack = createNativeStackNavigator();
 
 export default function App() {

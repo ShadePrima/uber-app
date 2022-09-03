@@ -9,13 +9,13 @@ const data = [
   {
     id: 123,
     title: "Get a ride",
-    image: "https://links.papareact.com/3pn",
+    image: require("../assets/white-car.png"),
     screen: "MapScreen",
   },
   {
     id: 456,
-    title: "Order food",
-    image: "https://links.papareact.com/28w",
+    title: "Order cargo",
+    image: require("../assets/boxes.png"),
 
     screen: "EatsScreen",
   },
@@ -36,7 +36,8 @@ const NavOptions = () => {
           <View>
             <Image
               style={{ width: 120, height: 120, resizeMode: "contain" }}
-              source={{ uri: item.image }}
+              // source={{ uri: item.image }}
+              source={item.image}
             />
             <Text style={tw`mt-2 text-lg font-semibold`}>{item.title}</Text>
             <Icon
