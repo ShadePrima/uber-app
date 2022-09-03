@@ -1,6 +1,7 @@
 import React from "react";
 import { View, Text, SafeAreaView, StyleSheet, Image } from "react-native";
 import tw from "twrnc";
+import NavOptions from "../components/NavOptions";
 
 const HomeScreen = () => {
   return (
@@ -10,6 +11,7 @@ const HomeScreen = () => {
           style={{ width: 100, height: 100, resizeMode: "contain" }}
           source={require("../assets/Uber_logo.png")}
         />
+        <NavOptions />
       </View>
     </SafeAreaView>
   );
