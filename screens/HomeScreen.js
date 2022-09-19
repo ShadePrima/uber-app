@@ -8,6 +8,7 @@ import tw from 'twrnc';
 
 import NavOptions from '../components/NavOptions';
 import { setDestination, setOrigin } from '../slices/navSlice';
+import NavFavourites from '../components/NavFavourites';
 
 const HomeScreen = ({ navigation }) => {
   const dispatch = useDispatch();
@@ -50,6 +51,7 @@ const HomeScreen = ({ navigation }) => {
           debounce={400}
         />
         <NavOptions />
+        <NavFavourites />
       </View>
     </SafeAreaView>
   );
