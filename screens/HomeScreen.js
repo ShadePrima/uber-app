@@ -37,7 +37,6 @@ const HomeScreen = ({ navigation }) => {
               })
             );
             dispatch(setDestination(null));
-            console.log(details.geometry.location, 'homeScreen');
           }}
           fetchDetails={true}
           returnKeyType={'search'}

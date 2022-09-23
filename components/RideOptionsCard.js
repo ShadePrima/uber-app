@@ -11,6 +11,8 @@ import { useNavigation } from '@react-navigation/native';
 
 import tw from 'twrnc';
 import { Icon } from '@rneui/themed';
+import { useSelector } from 'react-redux';
+import { selectTravelTimeInformation } from '../slices/navSlice';
 
 const data = [
   {
@@ -36,6 +38,11 @@ const data = [
 const RideOptionsCard = () => {
   const navigation = useNavigation();
   const [selected, setSelected] = React.useState(null);
+  const travelTimeInformation = useSelector(
+    (state) => state.nav.travelTimeInformation
+  );
+
+  console.log(travelTimeInformation, 'rideOptionsCard');
 
   return (
     <SafeAreaView style={tw`bg-white flex-grow`}>
@@ -46,7 +53,9 @@ const RideOptionsCard = () => {
         >
           <Icon name="chevron-left" type="fontawesome" />
         </TouchableOpacity>
-        <Text style={tw`text-center py-5 text-xl`}>Select a ride</Text>
+        <Text style={tw`text-center py-5 text-xl`}>
+          Select a ride - {travelTimeInformation?.distance.text}
+        </Text>
       </View>
 
       <FlatList
@@ -75,6 +84,16 @@ const RideOptionsCard = () => {
           </TouchableOpacity>
         )}
       />
+      <View>
+        <TouchableOpacity
+          disabled={!selected}
+          style={tw`bg-black py-3 m-3 ${!selected && 'bg-gray-300'}`}
+        >
+          <Text style={tw`text-center text-white text-xl`}>
+            Choose {selected?.title}
+          </Text>
+        </TouchableOpacity>
+      </View>
     </SafeAreaView>
   );
 };
